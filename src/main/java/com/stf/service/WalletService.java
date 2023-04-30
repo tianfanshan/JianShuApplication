@@ -8,5 +8,5 @@ public interface WalletService {
 
     Optional<Wallet> getWalletById(Long id);
 
-    Wallet chargeWallet(Wallet wallet,Double amount);
+    Wallet chargeWallet(Wallet wallet);
 }

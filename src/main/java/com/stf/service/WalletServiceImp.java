@@ -21,8 +21,7 @@ public class WalletServiceImp implements WalletService{
     }
 
     @Override
-    public Wallet chargeWallet(Wallet wallet,Double amount) {
-        wallet.setBalance(wallet.getBalance() + amount);
+    public Wallet chargeWallet(Wallet wallet) {
         return walletRepository.save(wallet);
     }
 }

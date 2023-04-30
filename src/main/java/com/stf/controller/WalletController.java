@@ -35,7 +35,8 @@ public class WalletController {
         if (amount < 0){
             return new ResponseEntity<>("Can not charge wallet less than 0",HttpStatus.BAD_REQUEST);
         }
-        Wallet savedWallet = walletService.chargeWallet(wallet.get(),amount);
+        wallet.get().setBalance(wallet.get().getBalance() + amount);
+        Wallet savedWallet = walletService.chargeWallet(wallet.get());
         return new ResponseEntity<>(savedWallet,HttpStatus.OK);
     }
 }
